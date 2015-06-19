@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6080E573-410C-4255-B822-A2051FAC69F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication2</RootNamespace>
+    <AssemblyName>QUANLYBANTHUOC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel">
+      <HintPath>..\Document\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Collector, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.Management.Collector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.CollectorEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.Management.CollectorEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Utility, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.Management.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server\120\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APP\Common\KetNoi.cs" />
+    <Compile Include="APP\Common\MoFileExcel.cs" />
+    <Compile Include="APP\Common\SQLHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\Common\SQLHelper.Designer.cs">
+      <DependentUpon>SQLHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Common\startUp.cs" />
+    <Compile Include="APP\DoanhThu\UCDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="APP\DoanhThu\UCDoanhThu.Designer.cs">
+      <DependentUpon>UCDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\DVT\FrmDVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\DVT\FrmDVT.Designer.cs">
+      <DependentUpon>FrmDVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HeThong\Dangnhap\DTO_TaiKhoan.cs" />
+    <Compile Include="APP\HeThong\Dangnhap\FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HeThong\Dangnhap\FrmDangNhap.designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HeThong\DoiMatKhau\FrmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HeThong\DoiMatKhau\FrmDoiMatKhau.Designer.cs">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HeThong\SaoLuuHoiPhuc\SLPHDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HeThong\SaoLuuHoiPhuc\SLPHDuLieu.Designer.cs">
+      <DependentUpon>SLPHDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HeThong\ThongTinPhanMem\FrmThongtinphanmem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HeThong\ThongTinPhanMem\FrmThongtinphanmem.Designer.cs">
+      <DependentUpon>FrmThongtinphanmem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HoaDon\FrmHoaDonBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HoaDon\FrmHoaDonBanHang.Designer.cs">
+      <DependentUpon>FrmHoaDonBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HoaDon\FrmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\HoaDon\FrmNhapHang.Designer.cs">
+      <DependentUpon>FrmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\HoaDon\UCBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="APP\HoaDon\UCBanHang.Designer.cs">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\KhachHang\FrmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\KhachHang\FrmKhachHang.Designer.cs">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Kho\FrmKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\Kho\FrmKho.Designer.cs">
+      <DependentUpon>FrmKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\NhaCungCap\FrmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\NhaCungCap\FrmNhaCungCap.Designer.cs">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\NhanVien\FrmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\NhanVien\FrmChucVu.Designer.cs">
+      <DependentUpon>FrmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\NhanVien\PopupNhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\NhanVien\PopupNhanvien.Designer.cs">
+      <DependentUpon>PopupNhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\NhanVien\UCNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="APP\NhanVien\UCNhanVien.Designer.cs">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\SplashScreen\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\SplashScreen\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Thuoc\frmImortThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\Thuoc\frmImortThuoc.Designer.cs">
+      <DependentUpon>frmImortThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Thuoc\FrmLoaiThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="APP\Thuoc\FrmLoaiThuoc.Designer.cs">
+      <DependentUpon>FrmLoaiThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Thuoc\UCThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="APP\Thuoc\UCThuoc.Designer.cs">
+      <DependentUpon>UCThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="APP\Common\SQLHelper.resx">
+      <DependentUpon>SQLHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\DoanhThu\UCDoanhThu.resx">
+      <DependentUpon>UCDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\DVT\FrmDVT.resx">
+      <DependentUpon>FrmDVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HeThong\Dangnhap\FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HeThong\DoiMatKhau\FrmDoiMatKhau.resx">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HeThong\SaoLuuHoiPhuc\SLPHDuLieu.resx">
+      <DependentUpon>SLPHDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HeThong\ThongTinPhanMem\FrmThongtinphanmem.resx">
+      <DependentUpon>FrmThongtinphanmem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HoaDon\FrmHoaDonBanHang.resx">
+      <DependentUpon>FrmHoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HoaDon\FrmNhapHang.resx">
+      <DependentUpon>FrmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\HoaDon\UCBanHang.resx">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\KhachHang\FrmKhachHang.resx">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\Kho\FrmKho.resx">
+      <DependentUpon>FrmKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\NhaCungCap\FrmNhaCungCap.resx">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\NhanVien\FrmChucVu.resx">
+      <DependentUpon>FrmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\NhanVien\PopupNhanvien.resx">
+      <DependentUpon>PopupNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\NhanVien\UCNhanVien.resx">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\SplashScreen\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\Thuoc\frmImortThuoc.resx">
+      <DependentUpon>frmImortThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\Thuoc\FrmLoaiThuoc.resx">
+      <DependentUpon>FrmLoaiThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="APP\Thuoc\UCThuoc.resx">
+      <DependentUpon>UCThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_thuoc_wizard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_sql.PNG" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\203391755.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Report-Editor2.png" />
+    <None Include="Resources\Report-Editor1.png" />
+    <None Include="Resources\Logout1.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\Medicine6.png" />
+    <None Include="Resources\Medicine5.png" />
+    <None Include="Resources\Medicine4.png" />
+    <None Include="Resources\Report-Editor.png" />
+    <None Include="Resources\Medicine3.png" />
+    <None Include="Resources\Medicine2.png" />
+    <None Include="Resources\Medicine1.png" />
+    <None Include="Resources\Medicine.png" />
+    <None Include="Resources\Pill.png" />
+    <None Include="Resources\Product.png" />
+    <None Include="Resources\Shop1.png" />
+    <None Include="Resources\Shop.png" />
+    <None Include="Resources\Add-To-Cart.png" />
+    <None Include="Resources\Add-To-Cart1.png" />
+    <None Include="Resources\Add-To-Cart2.png" />
+    <Content Include="Resources\Add.png" />
+    <None Include="Resources\login_background1.jpg" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Profile.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Pie Chart.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\logo_sql1.PNG" />
+    <None Include="Resources\Loading.png" />
+    <None Include="Resources\Load.png" />
+    <None Include="Resources\Line Chart.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\import_thuoc_wizard1.jpg" />
+    <None Include="Resources\Exit1.png" />
+    <None Include="Resources\Add1.png" />
+    <None Include="Resources\Add2.png" />
+    <Content Include="Resources\Back.png" />
+    <None Include="Resources\Back1.png" />
+    <Content Include="Resources\Bar Chart.png" />
+    <None Include="Resources\Bar Chart1.png" />
+    <None Include="Resources\Capture.PNG" />
+    <Content Include="Resources\Comment.png" />
+    <None Include="Resources\Comment1.png" />
+    <None Include="Resources\Customer.png" />
+    <Content Include="Resources\Delete.png" />
+    <None Include="Resources\Delete1.png" />
+    <None Include="Resources\Doctor-Nurse.png" />
+    <Content Include="Resources\Document-Download.png" />
+    <None Include="Resources\Document-Download1.png" />
+    <Content Include="Resources\Email.png" />
+    <None Include="Resources\Email1.png" />
+    <Content Include="Resources\Exit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using WindowsFormsApplication2.APP.SplashScreen;
+using System.Data;
 namespace WindowsFormsApplication2
 {
     public partial class FrmDangNhap : Form
@@ -34,15 +35,26 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
-                    string sql = "Select * from NHANVIEN where MANHANVIEN ='" + tk.UserName + "'and MATKHAU='" + tk.Pass + "'";
-                    if (kn.TaoBang(sql).Rows.Count != 0)
+                    string sql = "Select * from NHANVIEN where MANHANVIEN ='" + tk.UserName + "'";
+                    DataTable dt = kn.TaoBang(sql);
+                    if (dt.Rows.Count != 0)
                     {
-                        SplashScreen SplashScreen = new SplashScreen();
-                        SplashScreen.Show();
-                        this.Hide();
-                        string sql1 = "SELECT MOTA FROM NHANVIEN, CHUCVU WHERE CHUCVU.MACHUCVU = NHANVIEN.MACHUCVU AND MANHANVIEN = '"+_txtusername.Text+"'";
-                        FrmMain.quyen = kn.TaoBang(sql1).Rows[0][0].ToString().Trim();
-                        FrmMain.maNV = _txtusername.Text;
+                        if (dt.Rows[0][0].ToString() == tk.Pass)
+                        {
+                            SplashScreen SplashScreen = new SplashScreen();
+                            SplashScreen.Show();
+                            this.Hide();
+                            string sql1 = "SELECT MOTA FROM NHANVIEN, CHUCVU WHERE CHUCVU.MACHUCVU = NHANVIEN.MACHUCVU AND MANHANVIEN = '" + _txtusername.Text + "'";
+                            FrmMain.quyen = kn.TaoBang(sql1).Rows[0][0].ToString().Trim();
+                            FrmMain.maNV = _txtusername.Text;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mật khẩu sai! vui lòng kiểm tra lại"
+                                            ,"Thông báo"
+                                            ,MessageBoxButtons.OK
+                                            ,MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
